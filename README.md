@@ -39,9 +39,11 @@ The aim is to assess how effectively each model can classify acoustic signals ba
 ```mermaid
 flowchart LR
 A([Start Program]) --> B[Load Data] --> C[Preprocess] --> D[Feature Extraction]
---> E[Assign Labels] --> F[Group Split] --> G[Train Model]
---> H[Evaluate] --> I[Confusion Matrix] --> J[Repeat Splits]
---> K[Aggregate Results] --> L([End Program])
+D --> E[Assign Labels] --> F[Group Split] --> G[Train Model]
+G --> H[Evaluate] --> I[Confusion Matrix] --> J[Repeat Splits]
+J --> K[Aggregate Results] --> L([End Program])
+```
+
 
 The system loads the audio signals (1251 files total) and processes them to extract key features distinguishable in the acoustic space. From this extracted feature set, it applies group-based splitting to prevent leakage between distinct classes, incorporating and 80% to 20% ratio between training data and testing data, before training each model. The performance of each model in terms of distinguishing between classes for both kind of discharge and polarity is then evaluated, with the best performing models having their results displayed via confusion matrices. 20 repeated constrained test splits are then done on the best performing models, with the results aggregated to close out the program.
 
