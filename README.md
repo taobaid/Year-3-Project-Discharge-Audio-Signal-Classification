@@ -60,11 +60,17 @@ unzip hv_audio.zip
 Ensure the structure upon extracting the folder matches the one seen below
 
 hv_audio/
+
 ├── ac_corona_from_conductor/
+
 ├── ac_corona_from_insulator/
+
 ├── ac_dry_band_arcing/
+
 ├── +dc_corona_from_conductor/
+
 ├── -dc_corona_from_conductor/
+
 ...
 
 **# 4. Running the Software**
