@@ -73,7 +73,7 @@ hv_audio/
 
 ...
 
-**# 4. Running the Software**
+## 4. Running the Software
 
 To run the software, open the code in a notebook coding program such as Google Colab or Jupyter Notebook. Set the dataset path to the following
 
@@ -81,10 +81,10 @@ data_dir = "/content/hv_audio"
 
 Run all the cells to extract audio features, train the models, and evaluate performance. This will output tables for the accuracy and macro F1-scores for each model in discharge type and polarity classification, confusion matrices for the model performance, and line graphs and table demonstrating the peformance across 20 repeated constrained test splits.
 
-**# 5. Technical Details**
+## 5. Technical Details
 
 Audio signals are transformed into feature sets through three primary metrics. These include Mel-frequency cepstral coefficients (MFCCs), spectral features, and energy-based features, producing a tabular dataset suitable for application to machine learning models. The models used in the software are chosen to exhibit a range of results evaluating the performance of both classical models such as Random Forest and newer, more complex ensemble-tree based methods such as ExtraTrees. GroupKFold cross-validation is applied to prevent leakage between classes in the training and test datasets, with constrained test splits used to ensure all classes are present in the training and test datasets due to the limited size of the dataset for certain classes. 20 repeated splits are then used to assess model performance with differing dataset composition.
 
-**# 6. Known Issues and Future Improvements**
+## 6. Known Issues and Future Improvements
 
 Known issues include the low separability of polarity classification in the acoustic feature space, providing notably poorer performance for the machine learning models in comparison to the discharge type classification. Certain classes, such as the +DC insulator group, have a significantly lower number of acoustic signals compared to other classes, with this class imbalance significantly affecting the stability of the results across repeated test splits and the performance shown in the confusion matrices. The insulator class in particular is demonstrated to be volatile and prone to misclassification. To improve in the future, it is imperative to expand the dataset with more independent groups and engineer features more sensitive to the distinguishing classification of polarity types. Improvements could also be sought via applying deep learning models such as convolutional neural networks (CNNs) to analyse spectrographic features directly, and by applying non-acoustic electrical data such as leakage current for a more robust analysis.
