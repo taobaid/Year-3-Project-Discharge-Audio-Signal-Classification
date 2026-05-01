@@ -51,14 +51,19 @@ The system loads the audio signals (1251 files total) and processes them to extr
 
 The program requires versions of Python updated to or past version 3.8 and use in a notebook coding program such as Google Colab or Jupyter Notebook. Dependecies must be installed using the following line
 
+```
 pip install numpy pandas matplotlib scikit-learn xgboost librosa
+```
 
-To set up the dataset, download the hv_audio.zip folder included in the repository and extract using the following line
+To set up the dataset, download the hv_audio.zip folder (not included in repository due to large file size) and extract using the following line
 
+```
 unzip hv_audio.zip
+```
 
 Ensure the structure upon extracting the folder matches the one seen below
 
+```
 hv_audio/
 
 ├── ac_corona_from_conductor/
@@ -72,12 +77,15 @@ hv_audio/
 ├── -dc_corona_from_conductor/
 
 ...
+```
 
 ## 4. Running the Software
 
 To run the software, open the code in a notebook coding program such as Google Colab or Jupyter Notebook. Set the dataset path to the following
 
+```
 data_dir = "/content/hv_audio"
+```
 
 Run all the cells to extract audio features, train the models, and evaluate performance. This will output tables for the accuracy and macro F1-scores for each model in discharge type and polarity classification, confusion matrices for the model performance, and line graphs and table demonstrating the peformance across 20 repeated constrained test splits.
 
